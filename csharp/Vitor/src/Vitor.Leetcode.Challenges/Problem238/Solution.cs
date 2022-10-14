@@ -17,23 +17,17 @@ namespace Vitor.Leetcode.Challenges.Problem238
             posfix[nums.Length - 1] = nums[nums.Length - 1];
 
             for (var i = 1; i < nums.Length; i++)
-            {
                 prefix[i] = prefix[i - 1] * nums[i];
-            }
 
             for (var i = nums.Length - 1; i > 0; i--)
-            {
                 posfix[i - 1] = posfix[i] * nums[i - 1];
-            }
 
             var answer = new int[nums.Length];
 
             answer[0] = posfix[1];
 
             for (var i = 1; i < nums.Length - 1; i++)
-            {
                 answer[i] = posfix[i + 1] * prefix[i - 1];
-            }
 
             answer[nums.Length - 1] = prefix[nums.Length - 2];
 

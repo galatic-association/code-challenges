@@ -18,10 +18,24 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem238
 
         [Theory]
         [MemberData(nameof(Scenarios))]
-        public void Should_Return_Array_With_Product_Except_Self(int[] arr, int[] expectedArray)
+        public void Solution_Should_Return_Array_With_Product_Except_Self(int[] arr, int[] expectedArray)
         {
             //Arrange
             var sut = new Solution();
+
+            //Act
+            var result = sut.ProductExceptSelf(arr);
+
+            //Assert
+            result.Should().BeEquivalentTo(expectedArray);
+        }
+
+        [Theory]
+        [MemberData(nameof(Scenarios))]
+        public void Solution2_Should_Return_Array_With_Product_Except_Self(int[] arr, int[] expectedArray)
+        {
+            //Arrange
+            var sut = new Solution2();
 
             //Act
             var result = sut.ProductExceptSelf(arr);
