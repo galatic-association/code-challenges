@@ -22,7 +22,7 @@ namespace Vitor.Leetcode.Challenges.Problem53
                     //k -> current index
                     for (var k = i; k < i+j+1; k++)
                         currentSum += nums[k];
-
+                    
                     maxSum = Math.Max(maxSum, currentSum);
                 }
             }

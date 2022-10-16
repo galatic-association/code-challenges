@@ -29,5 +29,19 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem53
             result.Should().Be(expectedSum);
         }
 
+        [Theory]
+        [MemberData(nameof(Scenarios))]
+        public void MaxSubArray_DynamicProgrammingApproach_Should_Return_Correct_Values(int[] @case, int expectedSum)
+        {
+            //Arrange
+            var sut = new Solution2();
+
+            //Act
+            var result = sut.MaxSubArray(@case);
+
+            //Assert
+            result.Should().Be(expectedSum);
+        }
+
     }
 }
