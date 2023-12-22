@@ -16,10 +16,24 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem4
 
         [Theory]
         [MemberData(nameof(Scenarios))]
-        public void TestName(int[] input1, int[] input2, double expectedResult)
+        public void Should_Find_Median_Sorted_Arrays(int[] input1, int[] input2, double expectedResult)
         {
             //Arrange
             var sut = new Solution();
+
+            //Act
+            var result = sut.FindMedianSortedArrays(input1, input2);
+
+            //Assert
+            result.Should().Be(expectedResult);
+        }
+
+        [Theory]
+        [MemberData(nameof(Scenarios))]
+        public void Should_Find_Median_Sorted_Arrays_LogN(int[] input1, int[] input2, double expectedResult)
+        {
+            //Arrange
+            var sut = new Solution2();
 
             //Act
             var result = sut.FindMedianSortedArrays(input1, input2);
