@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 
 namespace Vitor.Leetcode.Challenges.Problem1768
@@ -6,19 +7,17 @@ namespace Vitor.Leetcode.Challenges.Problem1768
     {
         public string MergeAlternately(string word1, string word2)
         {
-            var pointer1 = 0;
-            var pointer2 = 0;
-            var builder = new StringBuilder();
-            var totalLength = word1.Length + word2.Length;
-
-            while (pointer1 + pointer2 < totalLength)
+            var builder = new StringBuilder(word1.Length + word2.Length);
+            int maxLength = Math.Max(word1.Length, word2.Length);
+            var i = 0;
+            do
             {
-                if (pointer1 < word1.Length)
-                    builder.Append(word1[pointer1++]);
-                if (pointer2 < word2.Length)
-                    builder.Append(word2[pointer2++]);
-            }
-
+                if (i < word1.Length)
+                    builder.Append(word1[i]);
+                if (i < word2.Length)
+                    builder.Append(word2[i]);
+            } while (++i < maxLength);
+           
             return builder.ToString();
         }
     }
