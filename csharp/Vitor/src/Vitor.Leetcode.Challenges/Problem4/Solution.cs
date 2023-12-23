@@ -6,12 +6,14 @@ namespace Vitor.Leetcode.Challenges.Problem4
     {
         public double FindMedianSortedArrays(int[] nums1, int[] nums2)
         {
-            var nums = new int[nums1.Length + nums2.Length];
+            var totalLength = nums1.Length + nums2.Length;
+            var medianPosition = (int)Math.Floor((totalLength) / 2d);
+            var nums = new int[medianPosition+1];
             var pointer1 = 0;
             var pointer2 = 0;
 
             var currentPosition = -1;
-            while (currentPosition < nums1.Length + nums2.Length - 1)
+            while (currentPosition < medianPosition)
             {
                 currentPosition++;
 
@@ -27,14 +29,12 @@ namespace Vitor.Leetcode.Challenges.Problem4
                 }
             }
 
-            var totalLength = nums1.Length + nums2.Length;
-            var middle = (int)Math.Floor(totalLength / 2.0);
-            if ((nums1.Length + nums2.Length) % 2 == 0)
+            if (totalLength % 2 == 0)
             {
-                return (nums[middle] + nums[middle - 1]) / 2D;
+                return (nums[medianPosition] + nums[medianPosition - 1]) / 2D;
             }
 
-            return nums[middle];
+            return nums[medianPosition];
         }
     }
 }
