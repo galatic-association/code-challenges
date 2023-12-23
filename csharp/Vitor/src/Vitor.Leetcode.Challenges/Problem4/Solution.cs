@@ -8,7 +8,7 @@ namespace Vitor.Leetcode.Challenges.Problem4
         {
             var totalLength = nums1.Length + nums2.Length;
             var medianPosition = (int)Math.Floor((totalLength) / 2d);
-            var nums = new int[medianPosition+1];
+            var nums = new int[2];
             var pointer1 = 0;
             var pointer2 = 0;
 
@@ -19,22 +19,22 @@ namespace Vitor.Leetcode.Challenges.Problem4
 
                 if (pointer1 > nums1.Length - 1 || (pointer2 < nums2.Length && nums1[pointer1] > nums2[pointer2]))
                 {
-                    nums[currentPosition] = nums2[pointer2];
+                    nums[currentPosition % 2] = nums2[pointer2];
                     pointer2++;
                 }
                 else
                 {
-                    nums[currentPosition] = nums1[pointer1];
+                    nums[currentPosition % 2] = nums1[pointer1];
                     pointer1++;
                 }
             }
 
             if (totalLength % 2 == 0)
             {
-                return (nums[medianPosition] + nums[medianPosition - 1]) / 2D;
+                return (nums[0] + nums[1]) / 2D;
             }
 
-            return nums[medianPosition];
+            return nums[currentPosition % 2];
         }
     }
 }

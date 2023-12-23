@@ -12,6 +12,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem4
             yield return new object[] { new[] { 1, 3 }, new[] { 2 }, 2.0 };
             yield return new object[] { new[] { 2 }, new[] { 1, 3 }, 2.0 };
             yield return new object[] { new[] { 1, 2 }, new[] { 3, 4 }, 2.5 };
+            yield return new object[] { new int[] {  }, new[] { 1 }, 1 };
         }
 
         [Theory]
