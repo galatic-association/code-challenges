@@ -6,6 +6,7 @@ namespace Vitor.Leetcode.Challenges.Problem4
     {
         //Solution Video 
         // https://www.youtube.com/watch?v=QjrchMRAkew
+        // https://ganeshprasad227.medium.com/logarithmic-algorithm-for-finding-median-of-two-sorted-arrays-of-different-sizes-aaecf302057e
         public double FindMedianSortedArrays(int[] nums1, int[] nums2)
         {
             // Ensure nums1 is the smaller array for simplicity
