@@ -8,7 +8,7 @@ namespace Vitor.Leetcode.Challenges.Problem1768
         public string MergeAlternately(string word1, string word2)
         {
             var builder = new StringBuilder(word1.Length + word2.Length);
-            int maxLength = Math.Max(word1.Length, word2.Length);
+            var maxLength = Math.Max(word1.Length, word2.Length);
             var i = 0;
             do
             {
