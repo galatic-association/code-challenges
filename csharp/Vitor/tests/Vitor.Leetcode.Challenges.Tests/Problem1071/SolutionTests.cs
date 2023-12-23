@@ -9,9 +9,9 @@ namespace Challenges.Tests.Problem1071
     {
         public static IEnumerable<object[]> Scenarios()
         {
-            //yield return new object[] { "ABCABC", "ABC", "ABC" };
-            //yield return new object[] { "ABABAB", "ABAB", "AB" };
-            //yield return new object[] { "LEET", "CODE", "" };
+            yield return new object[] { "ABCABC", "ABC", "ABC" };
+            yield return new object[] { "ABABAB", "ABAB", "AB" };
+            yield return new object[] { "LEET", "CODE", "" };
             yield return new object[] { "ABABABAB", "ABAB", "ABAB" };
         }
 

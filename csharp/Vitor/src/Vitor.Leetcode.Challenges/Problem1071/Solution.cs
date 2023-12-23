@@ -11,17 +11,22 @@ namespace Vitor.Leetcode.Challenges.Problem1071
                 return GcdOfStrings(str2, str1);
             }
 
-            var maxGcd = string.Empty;
             for (var i = 0; i < str1.Length; i++)
             {
-                var canditateGcd = str1[..(i+1)];
-                if (str2.Replace(canditateGcd, "") is "" && str1.Replace(canditateGcd, "") is "")
+                var currentLength = str1.Length - i;
+
+                if (str2.Length % currentLength != 0 && str1.Length % currentLength != 0)
+                    continue;
+
+                var canditateGcd = str1[..^i];
+
+                if (canditateGcd is "" || (str2.Replace(canditateGcd, "") is "" && str1.Replace(canditateGcd, "") is ""))
                 {
-                    maxGcd = maxGcd.Length < canditateGcd.Length ? canditateGcd : maxGcd;
+                    return canditateGcd;
                 }
             }
 
-            return maxGcd;
+            return "";
         }
     }
 }
