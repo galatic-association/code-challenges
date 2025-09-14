@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using FluentAssertions;
 using Xunit;
 
 namespace Vitor.Leetcode.Challenges.Problem21.Tests
@@ -12,7 +11,22 @@ namespace Vitor.Leetcode.Challenges.Problem21.Tests
         {
             var sut = new Solution();
             var resultList = sut.MergeTwoLists(firstList, secondsList);
-            resultList.Should().BeEquivalentTo(expectedList, opt => opt.Using(new ListNodeEquivalencyComparer()));
+            AssertListNodeEqual(expectedList, resultList);
+        }
+
+        private void AssertListNodeEqual(ListNode expected, ListNode actual)
+        {
+            var expectedNode = expected;
+            var actualNode = actual;
+
+            while (expectedNode != null && actualNode != null)
+            {
+                Assert.Equal(expectedNode.val, actualNode.val);
+                expectedNode = expectedNode.next;
+                actualNode = actualNode.next;
+            }
+
+            Assert.True(expectedNode == null && actualNode == null, "Linked lists have different lengths");
         }
 
         public static IEnumerable<object[]> Parameters()
