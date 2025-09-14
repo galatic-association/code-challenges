@@ -1,4 +1,3 @@
-using FluentAssertions;
 using System.Collections.Generic;
 using Vitor.Leetcode.Challenges.Problem1071;
 using Xunit;
@@ -26,7 +25,7 @@ namespace Challenges.Tests.Problem1071
             var result = sut.GcdOfStrings(str1, str2);
 
             //Assert
-            result.Should().Be(expected);
+            Assert.Equal(expected, result);
         }
     }
 }

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using FluentAssertions;
 using Vitor.Hackerrank.Challenges.HourglassSum;
 using Xunit;
 
@@ -16,7 +15,7 @@ namespace Vitor.Hackerrank.Challenges.Tests.HourglassSum
             var res = Result.hourglassSum(arr);
 
             //Assert
-            res.Should().Be(expectedMaxSum);
+            Assert.Equal(expectedMaxSum, res);
         }
 
         public static IEnumerable<object[]> Scenarios()

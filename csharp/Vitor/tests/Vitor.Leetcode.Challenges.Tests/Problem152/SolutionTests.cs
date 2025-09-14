@@ -1,4 +1,3 @@
-using FluentAssertions;
 using System.Collections.Generic;
 using Vitor.Leetcode.Challenges.Problem152;
 using Xunit;
@@ -28,7 +27,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem152
             var result = sut.MaxProduct(@case);
 
             //Assert
-            result.Should().Be(expectedSum);
+            Assert.Equal(expectedSum, result);
         }
     }
 }

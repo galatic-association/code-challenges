@@ -1,4 +1,3 @@
-using FluentAssertions;
 using System.Collections.Generic;
 using Vitor.Leetcode.Challenges.Problem1768;
 using Xunit;
@@ -25,7 +24,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem1768
             var result = sut.MergeAlternately(word1, word2);
 
             //Assert
-            result.Should().Be(expected);
+            Assert.Equal(expected, result);
         }
     }
 }

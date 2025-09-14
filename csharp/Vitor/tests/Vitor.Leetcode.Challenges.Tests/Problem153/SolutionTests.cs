@@ -1,4 +1,3 @@
-using FluentAssertions;
 using System.Collections.Generic;
 using Vitor.Leetcode.Challenges.Problem153;
 using Xunit;
@@ -25,7 +24,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem153
             var result = sut.FindMin(arr);
 
             //Assert
-            result.Should().Be(expectedMin);
+            Assert.Equal(expectedMin, result);
         }
 
         [Theory]
@@ -39,7 +38,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem153
             var result = sut.FindMin(arr);
 
             //Assert
-            result.Should().Be(expectedMin);
+            Assert.Equal(expectedMin, result);
         }
     }
 }

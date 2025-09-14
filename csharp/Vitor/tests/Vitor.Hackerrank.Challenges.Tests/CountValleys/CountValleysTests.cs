@@ -1,4 +1,3 @@
-using FluentAssertions;
 using Vitor.Hackerrank.Challenges.CountingValleys;
 using Xunit;
 
@@ -17,7 +16,7 @@ namespace Vitor.Hackerrank.Challenges.CountValleys.Tests
             var res = Result.countingValleys(steps, path);
 
             //Assert
-            res.Should().Be(expectValleysTraversed);
+            Assert.Equal(expectValleysTraversed, res);
         }
     }
 }

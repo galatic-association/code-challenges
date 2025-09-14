@@ -1,4 +1,3 @@
-using FluentAssertions;
 using System.Collections.Generic;
 using Vitor.Leetcode.Challenges.Problem53;
 using Xunit;
@@ -26,7 +25,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem53
             var result = sut.MaxSubArray(@case);
 
             //Assert
-            result.Should().Be(expectedSum);
+            Assert.Equal(expectedSum, result);
         }
 
         [Theory]
@@ -40,7 +39,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem53
             var result = sut.MaxSubArray(@case);
 
             //Assert
-            result.Should().Be(expectedSum);
+            Assert.Equal(expectedSum, result);
         }
 
     }

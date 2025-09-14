@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using FluentAssertions;
 using Vitor.Leetcode.Challenges.Problem238;
 using Xunit;
 
@@ -27,7 +26,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem238
             var result = sut.ProductExceptSelf(arr);
 
             //Assert
-            result.Should().BeEquivalentTo(expectedArray);
+            Assert.Equal(expectedArray, result);
         }
 
         [Theory]
@@ -41,7 +40,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem238
             var result = sut.ProductExceptSelf(arr);
 
             //Assert
-            result.Should().BeEquivalentTo(expectedArray);
+            Assert.Equal(expectedArray, result);
         }
     }
 }

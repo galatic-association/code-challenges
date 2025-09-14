@@ -1,4 +1,3 @@
-using FluentAssertions;
 using Vitor.Hackerrank.Challenges.RepeatedString;
 using Xunit;
 
@@ -15,7 +14,7 @@ namespace Vitor.Hackerrank.Challenges.Tests.RepeatedString
             var res = Result.repeatedString(@string, n);
 
             //Assert
-            res.Should().Be(expectCount);
+            Assert.Equal(expectCount, res);
         }
     }
 }

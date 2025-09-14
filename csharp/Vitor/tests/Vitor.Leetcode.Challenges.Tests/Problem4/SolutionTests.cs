@@ -1,7 +1,6 @@
 using Xunit;
 using Vitor.Leetcode.Challenges.Problem4;
 using System.Collections.Generic;
-using FluentAssertions;
 
 namespace Vitor.Leetcode.Challenges.Tests.Problem4
 {
@@ -26,7 +25,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem4
             var result = sut.FindMedianSortedArrays(input1, input2);
 
             //Assert
-            result.Should().Be(expectedResult);
+            Assert.Equal(expectedResult, result);
         }
 
         [Theory]
@@ -40,7 +39,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem4
             var result = sut.FindMedianSortedArrays(input1, input2);
 
             //Assert
-            result.Should().Be(expectedResult);
+            Assert.Equal(expectedResult, result);
         }
     }
 }

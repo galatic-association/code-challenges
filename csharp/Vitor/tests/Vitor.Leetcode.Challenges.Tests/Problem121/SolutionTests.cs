@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using FluentAssertions;
 using Vitor.Leetcode.Challenges.Problem121;
 using Xunit;
 
@@ -28,7 +27,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem121
             var result = sut.MaxProfit(prices);
 
             //Assert
-            result.Should().Be(expectedMaxProfit);
+            Assert.Equal(expectedMaxProfit, result);
         }
     }
 }

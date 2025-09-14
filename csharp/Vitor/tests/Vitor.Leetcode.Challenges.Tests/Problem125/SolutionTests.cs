@@ -1,5 +1,4 @@
 using Xunit;
-using FluentAssertions;
 
 namespace Vitor.Leetcode.Challenges.Problem125.Tests
 {
@@ -13,7 +12,7 @@ namespace Vitor.Leetcode.Challenges.Problem125.Tests
         {
             var sut = new Solution();
             var actual = sut.IsPalindrome(word);
-            actual.Should().Be(expectResult);
+            Assert.Equal(expectResult, actual);
         }
     }
 }

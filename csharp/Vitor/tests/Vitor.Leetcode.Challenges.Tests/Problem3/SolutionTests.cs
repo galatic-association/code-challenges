@@ -1,4 +1,3 @@
-using FluentAssertions;
 using Vitor.Leetcode.Challenges.Problem3;
 using Xunit;
 
@@ -25,7 +24,7 @@ namespace Vitor.Leetcode.Challenges.Tests.Problem3
             var result = sut.LengthOfLongestSubstring(@string);
 
             //Assert
-            result.Should().Be(expected);
+            Assert.Equal(expected, result);
         }
     }
 }
